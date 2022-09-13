@@ -12,7 +12,7 @@ button{
 }
 
 .pomodoro{
-  display: block;
+  display: none !important;
   width: 400px;
   height: 250px;
   display: flex;
@@ -80,6 +80,7 @@ img {
 .timer{
   width: 250px;
   height: 250px;
+  display: block;
   background-color:lightcoral;
   position: absolute;
   display: flex;
