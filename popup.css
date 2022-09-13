@@ -5,25 +5,32 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: poppins, sans-serif;
 }
 
 body {
-  background: #f5f5f5;
-  display: grid;
-  place-items: center center;
+  max-height: 400px;
+  max-width: 250px;
+  background-color: #f5f5f5;
+  /* display: grid;
+  place-items: center; */
 }
-.wrapper {
-  background-color: #dad7cd;
-  max-width: 400px;
-  aspect-ratio: 16/9;
-  text-align: center;
-  padding: 1rem;
+.pomodoro{
+  max-height: 400px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: cornflowerblue;
 }
-h1 {
-  font-weight: 700;
-  align-items: center;
-  vertical-align: middle;
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 1rem;
+  gap: 0.5rem;
 }
+
 img {
   width: 20px;
   display: inline-block;
