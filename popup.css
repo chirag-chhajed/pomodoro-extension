@@ -31,3 +31,9 @@ img {
 h3 {
   font-weight: 600;
 }
+button {
+  background: #499be8fa;
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+}
