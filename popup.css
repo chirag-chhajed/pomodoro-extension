@@ -1,0 +1,18 @@
+body {
+  background: #f5f5f5;
+  margin: 50px;
+}
+.wrapper {
+  width: 300px;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  align-items: center;
+  vertical-align: middle;
+}
+
+img {
+  width: 20px;
+  display: inline-block;
+}
