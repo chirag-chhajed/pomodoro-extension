@@ -120,6 +120,16 @@ button{
   width: 150px;
   height: 150px;
 }
+.base-timer .play{
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: azure;
+  top:50%;
+  left: 50%;
+  transform: translate(-10px,30px);
+}
 
 .base-timer__svg {
   transform: scaleX(-1);
