@@ -10,141 +10,166 @@
 button{
   border: none;
 }
-
+/* body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+} */
 .pomodoro{
-  display: none !important;
+  height: 250px;
   width: 400px;
-  height: 250px;
+  background-color: lavender;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background-color: cornflowerblue;
 }
-.pomodoro .logo{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 1rem;
-  gap: 0.5rem;
-}
-.pomodoro .tagline{
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
-}
-img {
-  width: 20px;
-  display: inline-block;
-}
-.pomodoro .btn-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-evenly;
-}
-.pomodoro .btn-container > button {
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  overflow: hidden;
-  border-radius: 5px;
-  border: none;
-  background-color: #d3dae0
-}
-.pomodoro .btn-container > button:hover {
-  border-radius: 5px;
-  padding-right: 24px;
-  padding-left:8px;
-}
-.btn-container > button:hover:after{
-  opacity: 1;
-  right: 10px;
-}
-.btn-container > button:after {
-  content: "\00BB";
-  opacity: 0;
-  font-size: 20px;
-  line-height: 40px;
-  transition: 0.4s;
-}
-.pomodoro div:nth-child(4){
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.timer{
-  width: 250px;
-  height: 250px;
-  display: block;
-  background-color:lightcoral;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.timer nav{
+.pomodoro > div:nth-child(1){
+  height: 15%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-inline: 1rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
-.timer nav div:nth-child(1){
-  place-self: flex-start;
-}
-.timer nav .buttons{
+.pomodoro > div:nth-child(1) .logo{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   gap: 0.5rem;
-  align-self: right;
 }
-.timer nav .buttons button:nth-child(1){
-  height: 1rem;
-  aspect-ratio: 1;
-  background-color: red;
-  border-radius: 50%;
-  border: none;
-}
-.timer nav .buttons button:nth-child(2){
-  height: 1rem;
-  aspect-ratio: 1;
-  background-color: yellow;
-  border-radius: 50%;
-  border: none;
-}
-.timer .time{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 3rem;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.5rem;
-}
-.timer .play-pause{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-.timer .play-pause > button{
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
-  color: white;
-  font-weight: 700;
+.pomodoro > div:nth-child(1) .logo > h1{
   text-transform: uppercase;
+  font-size: 1rem;
 }
-.timer .play-pause > button:nth-child(1){
-  background-color:#3a86ff ;
+.pomodoro > div:nth-child(1) .logo > .btn-container-1{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
-.timer .play-pause > button:nth-child(2){
-  background-color: #d00000;
+.btn-container-1 > button{
+  height: 1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.btn-container-1 > button:nth-child(1){
+  background-color: yellow;
+}
+.btn-container-1 > button:nth-child(2){
+  background-color: red;
+}
+.pomodoro > div:nth-child(2){
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 65%;
+  width: 100%;
+  gap: 1rem;
+  padding-left: 1rem;
+  align-items: end;
+}
+.btn-container-2{
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btn-container-2 > p{
+  font-size: rem;
+  font-weight: 600;
+}
+.btn-container-2 > button{
+  height: 2rem;
+  aspect-ratio: 1;
+  background-color: gray;
+  border-radius: 10px;
+}
+.app{
+  place-self: center;
+}
+.btn-container{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 2.5rem;
+}
+.btn-container > p{
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.btn-container-3{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.btn-container-3 > button{
+  height: 1.5rem;
+  border-radius: 8px;
+  background-color: gray;
+}
+
+/* .pomodoro > div:nth-child(3){
+  display: flex;
+  flex-direction: column;
+} */
+/* .heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+.base-timer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 6px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 6px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.pomodoro > div:nth-child(3){
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

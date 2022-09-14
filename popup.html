@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="/popup.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <div class="pomodoro">
+
+<head>
+  <link rel="stylesheet" href="/popup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="pomodoro">
+    <!-- Div 1 -->
+    <div>
+      <!-- Logo -->
       <div class="logo">
-        <img src="./Icons/tomato.png" alt="logo">
-        <h1>Pomo-Focus</h1>
+        <img src="./Icons/tomato_32.png" alt="">
+        <h1>pomodoro</h1>
       </div>
-      <div class="tagline">
-        <h3>Select a time frame</h3>
+      <!-- Minimize and Maximize -->
+      <div class="btn-container-1">
+        <button class="minimize"></button>
+        <button class="maximize"></button>
       </div>
-      <div class="btn-container">
+    </div>
+    <!-- Div 2 -->
+    <!-- Div 2 1 -->
+    <div>
+      <!-- Type of session -->
+      <div class="btn-container-2">
+        <p>Time Frame</p>
         <button>25:5</button>
         <button>50:10</button>
       </div>
-      <div>
-        Made with &#9829 by <a href="https://github.com/chirag-chhajed">Chirag</a>, 
-      <a href="https://github.com/darshil-here">Darshil</a> & 
-      <a href="https://github.com/siddh384">Siddh</a>
+      <!-- Timer Clock -->
+      <!-- Div 2 2 -->
+      <div id="app">
+        <div class="base-timer">
+          <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="base-timer__circle">
+              <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+              <path id="base-timer-path-remaining" stroke-dasharray="283"
+                class="base-timer__path-remaining ${remainingPathColor}" d="
+                      M 50, 50
+                      m -45, 0
+                      a 45,45 0 1,0 90,0
+                      a 45,45 0 1,0 -90,0
+                    "></path>
+            </g>
+          </svg>
+          <span id="base-timer-label" class="base-timer__label">25:00</span>
+        </div>
       </div>
+       <!-- Number of Sessions -->
+       <!-- Div 2 3 -->
+      <div class="btn-container">
+          <p>No. of Sessions</p>
+        <div class="btn-container-3">
+          <button>2</button>
+          <button>3</button>
+          <button>5</button>
+        </div>
+      </div>
+      
     </div>
-      <!-- Timer -->
-      <div class="timer">
-        <nav>
-          <div>Home</div>
-          <div class="buttons">
-            <button></button>
-            <button></button>
-          </div>
-        </nav>
-        <div class="time">
-          <div class="minute">25</div>
-          <div class="colon">:</div>
-          <div class="second">00</div>
-        </div>
-        <div class="play-pause">
-          <button class="pause"><i class="fab fa-twitter"></i>pause</button>
-          <button class="reset" ><i class="fab fa-refresh"></i>reset</button>
-        </div>
-        
-      </div>
+    <!-- Div 3 -->
+    <!-- Reset Button -->
     
-    <script src="/popup.js"></script>
-  </body>
+      <button type="reset"><i class="fab fa-refresh" aria-hidden="true"></i></button>
+    
+
+
+  </div>
+
+  <script src="/popup.js"></script>
+</body>
+
 </html>
