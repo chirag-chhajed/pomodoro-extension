@@ -26,7 +26,7 @@
       <!-- Minimize and Maximize -->
       <div class="btn-container-1">
         <button class="minimize"></button>
-        <button class="maximize"></button>
+        <button class="exit"></button>
       </div>
     </div>
     <!-- Div 2 -->
@@ -35,8 +35,8 @@
       <!-- Type of session -->
       <div class="btn-container-2">
         <p>Time Frame</p>
-        <button>25:5</button>
-        <button>50:10</button>
+        <button class="twentyfive">25:5</button>
+        <button class="fiftyten">50:10</button>
       </div>
       <!-- Timer Clock -->
       <!-- Div 2 2 -->
@@ -55,7 +55,7 @@
             </g>
           </svg>
           <span id="base-timer-label" class="base-timer__label">25:00</span>
-            <button class="play"><img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>
+            <button  class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>
         </div>
       </div>
        <!-- Number of Sessions -->
@@ -63,9 +63,9 @@
       <div class="btn-container">
           <p>No. of Sessions</p>
         <div class="btn-container-3">
-          <button>2</button>
-          <button>3</button>
-          <button>5</button>
+          <button class="number">2</button>
+          <button class="number">3</button>
+          <button class="number">5</button>
         </div>
       </div>
       
@@ -73,10 +73,11 @@
     <!-- Div 3 -->
     <!-- Reset Button -->
     <div>
-      <button type="reset"><img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/arrow-rotate-left.svg" alt=""></button>
+      <p id="error"></p>
+      <button id="reset" type="reset"><img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/arrow-rotate-left.svg" alt=""></button>
     </div>
     
-      <p>Made with <img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/heart.svg" height="15px"> by <a href="https://github.com/chirag-chhajed">Chirag</a>,
+      <p class="bottom-text">Made with <img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/heart.svg" height="15px"> by <a href="https://github.com/chirag-chhajed">Chirag</a>,
         <a href="https://github.com/darshil-here">Darshil</a> &
         <a href="https://github.com/siddh384">Siddh</a>
       </p>

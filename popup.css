@@ -53,17 +53,25 @@ button{
   flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
+  visibility: hidden;
 }
 .btn-container-1 > button{
   height: 1rem;
   aspect-ratio: 1;
   border-radius: 50%;
+  transition: all 0.3s linear;
 }
 .btn-container-1 > button:nth-child(1){
   background-color: #ffbd4c;
 }
+.btn-container-1 > button:nth-child(1):hover{
+  background-color: #f6a61b ;
+}
 .btn-container-1 > button:nth-child(2){
   background-color: #ff5c5c;
+}
+.btn-container-1 > button:nth-child(2):hover{
+  background-color: #fd2020;
 }
 .pomodoro > div:nth-child(2){
   display: grid;
@@ -236,6 +244,12 @@ button{
   margin-right: 1rem;
   justify-self: center;
   margin-bottom: 1rem;
+  visibility: hidden;
+}
+#error{
+  text-align: center;
+  color: red;
+  font-weight: 500;
 }
 .pomodoro > p{
   height: 5%;
