@@ -2,92 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/popup.css" />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-  />
-  <!-- <link rel="stylesheet" href="./fontawesome-free-6.2.0-desktop/fontawesome-free-6.2.0-desktop/css/all.css"> -->
-  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
   <div class="pomodoro">
-    <!-- Div 1 -->
-    <div>
-      <!-- Logo -->
-      <div class="logo">
-        <img src="./assets/Icons/tomato.png" height="24px" alt="">
-        <h1>pomodoro</h1>
-      </div>
-      <!-- Minimize and Maximize -->
-      <div class="btn-container-1">
-        <button class="minimize"></button>
-        <button class="exit"></button>
-      </div>
+    <div class="logo">
+      <img src="./assets/Icons/tomato.png" height="20px" alt="">
+      <h1>pomodoro</h1>
     </div>
-    <!-- Div 2 -->
-    <!-- Div 2 1 -->
-    <div>
-      <!-- Type of session -->
-      <div class="btn-container-2">
-        <p>Time Frame</p>
-        <button class="twentyfive">25:5</button>
-        <button class="fiftyten">50:10</button>
-      </div>
-      <!-- Timer Clock -->
-      <!-- Div 2 2 -->
-      <div id="app">
-        <div class="base-timer">
-          <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <g class="base-timer__circle">
-              <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-              <path id="base-timer-path-remaining" stroke-dasharray="283"
-                class="base-timer__path-remaining ${remainingPathColor}" d="
-                      M 50, 50
-                      m -45, 0
-                      a 45,45 0 1,0 90,0
-                      a 45,45 0 1,0 -90,0
-                    "></path>
-            </g>
-          </svg>
-          <span id="base-timer-label" class="base-timer__label">25:00</span>
-            <button  class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>
-        </div>
-      </div>
-       <!-- Number of Sessions -->
-       <!-- Div 2 3 -->
-      <div class="btn-container">
-          <p>No. of Sessions</p>
-        <div class="btn-container-3">
-          <button class="number">2</button>
-          <button class="number">3</button>
-          <button class="number">5</button>
-        </div>
-      </div>
-      
-    </div>
-    <!-- Div 3 -->
-    <!-- Reset Button -->
-    <div>
-      <p id="error"></p>
-      <button id="reset" type="reset"><img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/arrow-rotate-left.svg" alt=""></button>
-    </div>
-    
-      <p class="bottom-text">Made with <img src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/heart.svg" height="15px"> by <a href="https://github.com/chirag-chhajed" target="_blank">Chirag</a>,
-        <a href="https://github.com/darshil-here" target="_blank">Darshil</a> &
-        <a href="https://github.com/siddh384" target="_blank">Siddh</a>
-      </p>
-    
-    
+    <div id="app">
+      <div class="base-timer">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+            <path id="base-timer-path-remaining" stroke-dasharray="283"
+              class="base-timer__path-remaining ${remainingPathColor}" d="
+                          M 50, 50
+                          m -45, 0
+                          a 45,45 0 1,0 90,0
+                          a 45,45 0 1,0 -90,0
+                        "></path>
+          </g>
+        </svg>
+        <span id="base-timer-label" class="base-timer__label">25:00</span>
+        <button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>
+        <button class="pause"><img id="pause"
+            src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/pause.svg"></button>
+        <!-- <button class="setting"><img id="edit" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/apple-whole.svg" height="10px" alt=""></button> -->
 
-
+      </div>
+    </div>
+    <div class="btn-container">
+      <button class="work">Work</button>
+      <button class="shortbreak">ShortBreak</button>
+      <button class="longbreak">LongBreak</button>
+    </div>
   </div>
-
-  <script src="/popup.js"></script>
+  <script src="popup.js"></script>
 </body>
 
 </html>

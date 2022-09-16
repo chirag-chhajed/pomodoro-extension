@@ -1,78 +1,78 @@
-let buttons = document.querySelectorAll('button')
-let timeframeSelect = false
-let sessionSelect = false
-const btnContainer1 = document.querySelector(".btn-container-1")
-const btnContainer2 = document.querySelector(".btn-container-2")
-const btnContainer = document.querySelector(".btn-container")
-const resetBtn = document.getElementById("reset")
-const btmText = document.querySelector(".bottom-text")
-const playBtn = document.getElementById("play")
-const timer = document.getElementById("base-timer-label")
+let buttons = document.querySelectorAll("button");
+const playBtn = document.querySelector(".play");
+const pauseBtn = document.querySelector(".pause");
+const timer = document.getElementById("base-timer-label");
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
-
+let buttonSelect = false;
 const COLOR_CODES = {
   info: {
-    color: "green"
+    color: "green",
   },
   warning: {
     color: "orange",
-    threshold: WARNING_THRESHOLD
+    threshold: WARNING_THRESHOLD,
   },
   alert: {
     color: "red",
-    threshold: ALERT_THRESHOLD
-  }
+    threshold: ALERT_THRESHOLD,
+  },
 };
-
+// btn.pare = `<button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>`
+// playBtn.innerHTML = `<img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">`
 let i = 0;
-const timeFrame = [25*60,50*60]
-let TIME_LIMIT = timeFrame[i]
+const timeFrame = [25 * 60, 1 * 60, 15 * 60];
+let TIME_LIMIT = timeFrame[i];
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
-buttons.forEach(function(btn){
-    btn.addEventListener("click",function(e){
-        if(btn.classList.contains("twentyfive") || btn.classList.contains("fiftyten")){
-           console.log(btn.innerText)
-            timeframeSelect = true
-        };
-        if(btn.classList.contains("twentyfive")){
-          TIME_LIMIT = timeFrame[0]
-        }
-        if(btn.classList.contains("fiftyten")){
-          TIME_LIMIT = timeFrame[1]
-        }
-
-        if(btn.classList.contains("number")){
-            console.log(btn.innerText)
-            sessionSelect = true
-        }
-        if(btn.classList.contains("play")){
-           if(timeframeSelect == true && sessionSelect == true){
-            console.log("play")
-            btnContainer1.style.visibility = "visible"
-            btnContainer2.style.visibility = "hidden"
-            btnContainer.style.visibility = "hidden"
-            resetBtn.style.visibility = "visible"
-            btmText.style.visibility = "hidden"
-            playBtn.src = "/assets/fontawesome-free-6.2.0-desktop/svgs/solid/pause.svg"
-            startTimer();
-
+buttons.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    if (btn.classList.contains("work")) {
+      console.log("work");
+      buttonSelect = true;
+      TIME_LIMIT = timeFrame[0];
+    }
+    if (btn.classList.contains("shortbreak")) {
+      console.log("shortbreak");
+      buttonSelect = true;
+      TIME_LIMIT = timeFrame[1];
+    }
+    if (btn.classList.contains("longbreak")) {
+      console.log("longbreak");
+      buttonSelect = true;
+      TIME_LIMIT = timeFrame[2];
+    }
+    if (btn.classList.contains("play")) {
+      if (buttonSelect == true) {
+        startTimer();
+        playBtn.style.zIndex = "-1";
+        pauseBtn.style.zIndex = "1";
+      }
+    }
+    if (btn.classList.contains("pause")) {
+      playBtn.style.zIndex = "1";
+      pauseBtn.style.zIndex = "-1";
+      clearInterval(timerInterval);
+    }
+    if (btn.classList.contains("setting")) {
+      timer.contentEditable = true;
+      TIME_LIMIT = timer.nodeValue;
+    }
+  });
+});
 function onTimesUp() {
   clearInterval(timerInterval);
 }
-
 function startTimer() {
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-      timeLeft
-    );
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(timeLeft);
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
@@ -81,7 +81,6 @@ function startTimer() {
     }
   }, 1000);
 }
-
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
@@ -125,15 +124,3 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
-           }
-           if(timeframeSelect == false || sessionSelect == false){
-            console.log("select both")
-            error.innerHTML = "Select both of them"
-           }
-        }
-        if(btn.classList.contains("minimize")){
-            document.querySelector(".pomodoro").style.height = "125px"
-            document.querySelector(".pomodoro").style.width = "200px"
-        }
-    })
-})
