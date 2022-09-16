@@ -1,4 +1,5 @@
 let buttons = document.querySelectorAll("button");
+const audio = document.querySelector('audio')
 const playBtn = document.querySelector(".play");
 const pauseBtn = document.querySelector(".pause");
 const timer = document.getElementById("base-timer-label");
@@ -22,7 +23,7 @@ const COLOR_CODES = {
 // btn.pare = `<button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>`
 // playBtn.innerHTML = `<img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">`
 let i = 0;
-const timeFrame = [25 * 60, 5 * 60, 15 * 60];
+const timeFrame = [25 * 60, 1 * 30, 15 * 60];
 let TIME_LIMIT = timeFrame[i];
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
@@ -51,7 +52,12 @@ buttons.forEach(function (btn) {
         startTimer();
         playBtn.style.zIndex = "-1";
         pauseBtn.style.zIndex = "1";
+        text.style.display = "none"
+        reset.style.visibility = "visible"
       }
+    }
+    if(btn.classList.contains("reset")){
+      TIME_LIMIT = timeFrame[0];
     }
     if (btn.classList.contains("pause")) {
       playBtn.style.zIndex = "1";
@@ -66,6 +72,7 @@ buttons.forEach(function (btn) {
 });
 function onTimesUp() {
   clearInterval(timerInterval);
+  audio.play()
 }
 function startTimer() {
   timerInterval = setInterval(() => {
