@@ -22,7 +22,7 @@ const COLOR_CODES = {
 // btn.pare = `<button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>`
 // playBtn.innerHTML = `<img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">`
 let i = 0;
-const timeFrame = [25 * 60, 1 * 60, 15 * 60];
+const timeFrame = [25 * 60, 5 * 60, 15 * 60];
 let TIME_LIMIT = timeFrame[i];
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
