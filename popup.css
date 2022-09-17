@@ -74,6 +74,12 @@ body {
 .base-timer .pause {
   z-index: -1;
 }
+.base-timer > button img{
+  transition: all 0.3s linear;
+}
+.base-timer > button img:hover{
+  transform: scale(1.2);
+}
 
 #reset {
   visibility: hidden;

@@ -36,16 +36,19 @@ buttons.forEach(function (btn) {
       console.log("work");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[0];
+      timer.innerHTML = "25:00"
     }
     if (btn.classList.contains("shortbreak")) {
       console.log("shortbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[1];
+      timer.innerHTML = "05:00"
     }
     if (btn.classList.contains("longbreak")) {
       console.log("longbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[2];
+      timer.innerHTML = "15:00"
     }
     if (btn.classList.contains("play")) {
       if (buttonSelect == true) {
@@ -58,6 +61,7 @@ buttons.forEach(function (btn) {
     }
     if (btn.classList.contains("reset")) {
       TIME_LIMIT = timeFrame[0];
+      timer.innerHTML = "05:00"
     }
     if (btn.classList.contains("pause")) {
       playBtn.style.zIndex = "1";
