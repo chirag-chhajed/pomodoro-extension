@@ -5,17 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pomodoro Extension</title>
+  <!-- CSS stylesheets -->
   <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
+  <!-- Pomodoro -->
   <div class="pomodoro">
+    <!-- logo -->
     <div class="logo">
-      <img src="./assets/Icons/tomato.png" height="20px" alt="">
+      <img src="./assets/Icons/tomato.png" alt="logo">
       <h1>pomodoro</h1>
     </div>
-    <div id="app">
+    <!-- Timer -->
+    <div id="timer">
       <div class="base-timer">
         <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <g class="base-timer__circle">
@@ -30,26 +34,40 @@
           </g>
         </svg>
         <span id="base-timer-label" class="base-timer__label">25:00</span>
-        <button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>
-        <button class="pause"><img id="pause"
-            src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/pause.svg"></button>
+        <!-- Play pause button -->
+
+        <button class="play">
+          <img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">
+        </button>
+
+        <button class="pause">
+          <img id="pause" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/pause.svg">
+        </button>
+
         <!-- <button class="setting"><img id="edit" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/apple-whole.svg" height="10px" alt=""></button> -->
 
       </div>
-      <button type="reset" class="reset" id="reset"><img src="./assets/fontawesome-free-6.2.0-desktop/svgs/solid/arrow-rotate-left.svg" height="20px" alt=""></button>
+      <!-- Reset button -->
+      <button type="reset" class="reset" id="reset">
+        <img src="./assets/fontawesome-free-6.2.0-desktop/svgs/solid/arrow-rotate-left.svg" height="20px" alt="">
+      </button>
     </div>
     <div class="btn-container">
+      <!-- Pomodoro Buttons -->
       <button class="work">Work</button>
       <button class="shortbreak">ShortBreak</button>
       <button class="longbreak">LongBreak</button>
     </div>
+    <!-- Bottom text -->
     <div id="text">
       Made with &#9829 by <a href="https://github.com/chirag-chhajed">Chirag</a>,
       <a href="https://github.com/darshil-here">Darshil</a> &
       <a href="https://github.com/siddh384">Siddh</a>
     </div>
   </div>
+  <!-- Timer finish audio -->
   <audio src="./assets/Rahul Gandhi Khatam Tata Good bye Gaya _ Funny speech _ Meme Template (mp3cut.net).mp3"></audio>
+  <!-- Javascript -->
   <script src="popup.js"></script>
 </body>
 
