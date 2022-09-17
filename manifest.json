@@ -12,5 +12,7 @@
     "16": "/assets/icons/tomato_16.png",
     "32": "/assets/icons/tomato_32.png",
     "48": "/assets/icons/tomato_48.png"
-  }
+  },
+  "permissions": ["storage","unlimitedStorage"]
+  
 }
