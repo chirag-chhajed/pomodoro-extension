@@ -2,10 +2,12 @@ let buttons = document.querySelectorAll("button");
 const audio = document.querySelector("audio"),
   playBtn = document.querySelector(".play"),
   pauseBtn = document.querySelector(".pause"),
+  resetBtn = document.querySelector(".reset")
   timer = document.getElementById("base-timer-label"),
   FULL_DASH_ARRAY = 283,
   WARNING_THRESHOLD = 10,
   ALERT_THRESHOLD = 5;
+
 let buttonSelect = false;
 const COLOR_CODES = {
   info: {
@@ -51,17 +53,22 @@ buttons.forEach(function (btn) {
       timer.innerHTML = "15:00"
     }
     if (btn.classList.contains("play")) {
-      if (buttonSelect == true) {
+      
         startTimer();
         playBtn.style.zIndex = "-1";
         pauseBtn.style.zIndex = "1";
         text.style.display = "none";
         reset.style.visibility = "visible";
-      }
+      
     }
     if (btn.classList.contains("reset")) {
       TIME_LIMIT = timeFrame[0];
-      timer.innerHTML = "05:00"
+      timer.innerHTML = "25:00"
+      resetBtn.style.visibility = "hidden"
+      playBtn.style.zIndex = "1";
+      pauseBtn.style.zIndex = "-1";
+      clearInterval(timerInterval)
+      
     }
     if (btn.classList.contains("pause")) {
       playBtn.style.zIndex = "1";
@@ -92,10 +99,10 @@ function startTimer() {
     }
   }, 1000);
 }
+
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
-
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
