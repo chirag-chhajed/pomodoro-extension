@@ -3,7 +3,6 @@
   "description": "A Pomodoro Clock Extension that helps you increase your productivity",
   "version": "1.0",
   "manifest_version": 3,
-  
 
   "action": {
     "default_popup": "popup.html"
@@ -13,6 +12,5 @@
     "32": "/assets/icons/tomato_32.png",
     "48": "/assets/icons/tomato_48.png"
   },
-  "permissions": ["storage","unlimitedStorage"]
-  
+  "permissions": ["storage", "unlimitedStorage"]
 }
