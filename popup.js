@@ -2,11 +2,11 @@ let buttons = document.querySelectorAll("button");
 const audio = document.querySelector("audio"),
   playBtn = document.querySelector(".play"),
   pauseBtn = document.querySelector(".pause"),
-  resetBtn = document.querySelector(".reset")
-  timer = document.getElementById("base-timer-label"),
-  FULL_DASH_ARRAY = 283,
-  WARNING_THRESHOLD = 10,
-  ALERT_THRESHOLD = 5;
+  resetBtn = document.querySelector(".reset");
+(timer = document.getElementById("base-timer-label")),
+  (FULL_DASH_ARRAY = 283),
+  (WARNING_THRESHOLD = 10),
+  (ALERT_THRESHOLD = 5);
 
 let buttonSelect = false;
 const COLOR_CODES = {
@@ -25,7 +25,7 @@ const COLOR_CODES = {
 // btn.pare = `<button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>`
 // playBtn.innerHTML = `<img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">`
 let i = 0;
-const timeFrame = [25 * 60, 60, 15 * 60];
+const timeFrame = [25 * 60, 5 * 60, 15 * 60];
 let TIME_LIMIT = timeFrame[i];
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
@@ -38,7 +38,7 @@ buttons.forEach(function (btn) {
       console.log("work");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[0];
-      timer.innerHTML = "25:00"
+      timer.innerHTML = "25:00";
       clearInterval(timerInterval);
       playBtn.style.zIndex = "1";
       pauseBtn.style.zIndex = "-1";
@@ -47,7 +47,7 @@ buttons.forEach(function (btn) {
       console.log("shortbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[1];
-      timer.innerHTML = "05:00"
+      timer.innerHTML = "05:00";
       clearInterval(timerInterval);
       playBtn.style.zIndex = "1";
       pauseBtn.style.zIndex = "-1";
@@ -56,28 +56,25 @@ buttons.forEach(function (btn) {
       console.log("longbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[2];
-      timer.innerHTML = "15:00"
+      timer.innerHTML = "15:00";
       clearInterval(timerInterval);
       playBtn.style.zIndex = "1";
       pauseBtn.style.zIndex = "-1";
     }
     if (btn.classList.contains("play")) {
-      
-        startTimer();
-        playBtn.style.zIndex = "-1";
-        pauseBtn.style.zIndex = "1";
-        text.style.display = "none";
-        reset.style.visibility = "visible";
-      
+      startTimer();
+      playBtn.style.zIndex = "-1";
+      pauseBtn.style.zIndex = "1";
+      text.style.display = "none";
+      reset.style.visibility = "visible";
     }
     if (btn.classList.contains("reset")) {
       TIME_LIMIT = timeFrame[0];
-      timer.innerHTML = "25:00"
-      resetBtn.style.visibility = "hidden"
+      timer.innerHTML = "25:00";
+      resetBtn.style.visibility = "hidden";
       playBtn.style.zIndex = "1";
       pauseBtn.style.zIndex = "-1";
-      clearInterval(timerInterval)
-      
+      clearInterval(timerInterval);
     }
     if (btn.classList.contains("pause")) {
       playBtn.style.zIndex = "1";
