@@ -14,18 +14,18 @@ const COLOR_CODES = {
     color: "green",
   },
   warning: {
-    color: "orange",
+    color: "green",
     threshold: WARNING_THRESHOLD,
   },
   alert: {
-    color: "red",
+    color: "green",
     threshold: ALERT_THRESHOLD,
   },
 };
 // btn.pare = `<button class="play"><img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg"></button>`
 // playBtn.innerHTML = `<img id="play" src="/assets/fontawesome-free-6.2.0-desktop/svgs/solid/play.svg">`
 let i = 0;
-const timeFrame = [25 * 60, 1 * 30, 15 * 60];
+const timeFrame = [25 * 60, 60, 15 * 60];
 let TIME_LIMIT = timeFrame[i];
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
@@ -39,18 +39,27 @@ buttons.forEach(function (btn) {
       buttonSelect = true;
       TIME_LIMIT = timeFrame[0];
       timer.innerHTML = "25:00"
+      clearInterval(timerInterval);
+      playBtn.style.zIndex = "1";
+      pauseBtn.style.zIndex = "-1";
     }
     if (btn.classList.contains("shortbreak")) {
       console.log("shortbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[1];
       timer.innerHTML = "05:00"
+      clearInterval(timerInterval);
+      playBtn.style.zIndex = "1";
+      pauseBtn.style.zIndex = "-1";
     }
     if (btn.classList.contains("longbreak")) {
       console.log("longbreak");
       buttonSelect = true;
       TIME_LIMIT = timeFrame[2];
       timer.innerHTML = "15:00"
+      clearInterval(timerInterval);
+      playBtn.style.zIndex = "1";
+      pauseBtn.style.zIndex = "-1";
     }
     if (btn.classList.contains("play")) {
       
